@@ -10,20 +10,20 @@ $alphacha=range("a","z");
 foreach ($alphacha as $key => $value) {
     # code...
     if ($value==$input&&$input!='z') {
-        echo $alphacha[$key+1];
+        echo $alphacha[$key+1].'<br>';
         # code...
         break;
     }
     elseif ($input=='z') {
         # code...
-        echo 'a';
+        echo 'a'.'<br>';
         break;
     }
 }
-    # code...
+    
 }
 
-echo nextChar('b') . '<br>';
+nextChar('b') ;
 
 //////////////////////////////////////////
 //another answer
@@ -37,5 +37,6 @@ if (strlen($next_cha) > 1)
  }
 echo $next_cha."\n";
 }
-echo getNextChar('a');
+ getNextChar('z');
+ 
 ?>

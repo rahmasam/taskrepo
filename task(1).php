@@ -1,3 +1,11 @@
+<!-- 
+# Task ... 
+Write a PHP program to calculate electricity bill .
+Conditions:
+For first 50 units – 3.50/unit
+For next 100 units – 4.00/unit
+For units above 150 – 6.50/unit
+You can use conditional statements. -->
 <!DOCTYPE html>
 <html>
 <head>

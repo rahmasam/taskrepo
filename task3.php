@@ -1,3 +1,11 @@
+<!-- Create a form with the following inputs (name, email, password, address,, linkedin url) Validate inputs then return message to user . 
+* validation rules ... 
+name  = [required , string]
+email = [required,email]
+password = [required,min = 6]
+address = [required,length = 10 chars]
+linkedin url = [reuired | url]
+* Don't use Filters or regular expressions .  -->
 <!DOCTYPE html>
 <html>
 
@@ -39,7 +47,7 @@
         if (empty($email)) {
             $errors['email'] = 'please enter email this is required input';
         }
-        elseif ( strpos($email,'@')=='' or strpos($email,'.com')==''or strpos($email,'.com')<strpos($email,'@') ) {
+        elseif ( strpos($email,'@')=='' or strpos($email,'@')==0 or strpos($email,'.')==''or strpos($email,'.')<strpos($email,'@') ) {
             $errors['email'] = 'enter email in this form:username@example.com';
            
         }

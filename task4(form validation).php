@@ -103,9 +103,9 @@ Profile image
 
                 if (move_uploaded_file($imgTempPath, $disPath)) {
                     # code...
-                    echo 'image uploaded';
+                    echo 'image uploaded'.'<br>';
                 } else {
-                    echo 'error try again';
+                    echo 'error try again'.'<br>';
                 }
             } else {
                 echo 'Extention not allowed';
@@ -124,12 +124,33 @@ Profile image
             $_SESSION['address'] = $address;
             $_SESSION['gender'] = $gender;
             $_SESSION['url'] = $linkedinUrl;
-            $_SESSION['image'] = $finalName;
+            $_SESSION['image'] =$finalName;
+           // $_SESSION['user']=['name'=>$name,'email'=>$email,'password'=>$password,'address'=>$address ,'gender'=>$gender,'url'=>$linkedinUrl,'image'=>$finalName];
+        
+           //set cookie
+            // setcookie('studentName',$name,time()+86400,'/');
+            // setcookie('studentPass',$password,time()+86400,'/');
+            // setcookie('studentEmail',$email,time()+86400,'/');
+            // setcookie('studentAddress',$address,time()+86400,'/');
+            // setcookie('studentGender',$gender,time()+86400,'/');
+            // setcookie('studentUrl',$linkedinUrl,time()+86400,'/');
+            // setcookie('studentImg',$finalName,time()+86400,'/');
+            
+            //how to append (write)into file 
+            $file =fopen('test.txt','a')or die('unable to open file');
+            $studentId=$name.'|'. $password .'|'.$email.'|'. $addres .'|'. $gender .'|' . $linkedinUrl .'|'. $finalName."\n";
+            nl2br(fwrite($file,$studentId)) ;
+           
+            fclose($file);
+
+           
+
+
         }
     }
 
 
-
+    echo date('d.m.y  h:i:s a');
 
 
     ?>

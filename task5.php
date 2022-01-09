@@ -94,9 +94,10 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
          
         //display data 
         setcookie('blog',$blogModule,time()+86400,'/');
-        echo $_COOKIE['blog'];
-
-    }
+        //echo $_COOKIE['blog'];
+        echo 'title :'.$title .'<br>';
+        echo 'content:'.$contentt .'<br>';
+        echo 'image:'. $finalName . '<br>';
 }
 
 	

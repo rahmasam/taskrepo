@@ -88,7 +88,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     }else {
         echo 'valid data'.'<br>';
         $file=fopen('text.txt','a')or die('unable to open file');
-        $blogModule=time().rand().'|'.$title .'|'.$content .'|'.$finalName ;
+        $blogModule=time().rand().'|'.$title .'|'.$content .'|'.$finalName."/n" ;
         fwrite($file,$blogModule);
         fclose($file);
 

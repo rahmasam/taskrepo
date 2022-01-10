@@ -88,17 +88,24 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     }else {
         echo 'valid data'.'<br>';
         $file=fopen('text.txt','a')or die('unable to open file');
-        $blogModule=$title .'||'.$content .'||'.$finalName ;
+        $blogModule=time().rand().'|'.$title .'|'.$content .'|'.$finalName ;
         fwrite($file,$blogModule);
         fclose($file);
+
         $file=fopen('text.txt','r')or die('unable to open file');
         while(!feof($file)){
-                echo  fgets($file).'<br>';
+            $line=fgets($file);
+              $data=explode('|',$line);
+              if (count($data)>0){
+                  echo $line;?>
+                  <a href="remove.php?id=<?php echo $data[0]?>">Remove </a> <br>
+                  <?php
+              }  
              }
          fclose($file) ;   
 
 
-        
+
 }
 }
 	

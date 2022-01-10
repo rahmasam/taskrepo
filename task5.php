@@ -87,23 +87,22 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         }
     }else {
         echo 'valid data'.'<br>';
-        $file=fopen('text.txt','w')or die('unable to open file');
+        $file=fopen('text.txt','a')or die('unable to open file');
         $blogModule=$title .'||'.$content .'||'.$finalName ;
         fwrite($file,$blogModule);
         fclose($file);
-         
-        //display data 
-        setcookie('blog',$blogModule,time()+86400,'/');
-        //echo $_COOKIE['blog'];
-        echo 'title :'.$title .'<br>';
-        echo 'content:'.$contentt .'<br>';
-        echo 'image:'. $finalName . '<br>';
-}
+        $file=fopen('text.txt','r')or die('unable to open file');
+        while(!feof($file)){
+                echo  fgets($file).'<br>';
+             }
+         fclose($file) ;   
 
+
+        
+}
+}
 	
 ?>
 
-	
-	
 </body>
 </html>

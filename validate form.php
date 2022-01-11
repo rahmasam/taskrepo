@@ -9,9 +9,10 @@
 <body>
 
 
-		<form action="" method="post" id="quiz-form">
-            	title<input type="text" name="title" id="title" placeholder="Please enter no. of Units" /><br>
-               content <input type="text" name="content" id="content" placeholder="Please enter no. of Units" /><br>
+		<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="quiz-form">
+            	title<input type="text" name="title" id="title"  /><br>
+               content <input type="text" name="content" id="content"  /><br>
+               Date <input type="text" name="content" id="date"  /><br>
             	<input type="submit" name="submit" id="submit" value="Submit" />
 		</form>
         <?php

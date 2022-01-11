@@ -10,7 +10,7 @@ $data = mysqli_query($con, $sql);
 
 if (mysqli_num_rows($data) == 1) {
     # fetch data
-    $Userdata = mysqli_fetch_assoc($data);
+    $blogdata = mysqli_fetch_assoc($data);
 } else {
     $Message = 'Invalid Id ';
     $_SESSION['Message'] = $Message;
@@ -61,14 +61,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <body>
 
 
-        <form action="edit.php?id=<?php echo $Userdata['id']; ?>" method="post" enctype="multipart/form-data">
-            title<input type="text" name="title" id="title" required value="<?php echo $Userdata['title']; ?>" placeholder="Please enter title of blog " /><br>
+        <form action="edit.php?id=<?php echo $blogdata['id']; ?>" method="post" enctype="multipart/form-data">
+            title<input type="text" name="title" id="title" required value="<?php echo $blogdata['title']; ?>" placeholder="Please enter title of blog " /><br>
             <br>
-            content <input type="text" name="content" id="content" required value="<?php echo $Userdata['content']; ?>" placeholder="Please enter content of blog " style="width:500px; height:100px;" /><br>
+            content <input type="text" name="content" id="content" required value="<?php echo $blogdata['content']; ?>" placeholder="Please enter content of blog " style="width:500px; height:100px;" /><br>
             <br>
-            Date<input type="date" name="date"  required value="<?php echo $Userdata['date']; ?>"/><br>
+            Date<input type="date" name="date"  required value="<?php echo $blogdata['date']; ?>"/><br>
             <br>
-            image<input type="file" name="image" required value="<?php echo $Userdata['image']; ?>"/><br>
+            image<input type="file" name="image" required value="<?php echo $blogdata['image']; ?>"/><br>
             <br>
             <input type="submit" name="submit" id="submit" value="Edit" />
         </form>

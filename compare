@@ -1,0 +1,8 @@
+
+            incomlete method       complete method       properties     extend          object
+abstract        true                      true               true         true           false
+
+interface        true                    false               false         true           false 
+
+
+abstract class contain incomplete method,complete method ,properites it can be iheritance 

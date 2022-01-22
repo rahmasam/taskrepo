@@ -1,0 +1,36 @@
+#admins  
+id  name      email    password
+1   ahmed       x@x      xxxxx 
+
+
+#patients 
+id       name    email    password   gender
+
+
+
+#doctors
+id     name    email    password   specialize   gender  
+
+
+
+#appointments 
+id    day   from    to   doc_id
+
+
+
+doctors    appointments
+1               m
+1               1
+==========================
+1               m
+
+
+
+#patients        appointments
+ 1                     m
+ m                     1   
+ ========================
+ m                      m                  
+
+#reservation
+id  date  app_id   patient_id  accept/refuse  
